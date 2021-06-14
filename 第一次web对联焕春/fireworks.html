@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="js/js.js" ></script>
+    <meta charset="UTF-8">
+    <embed src="cjxq.mp3" hidden="true" autostart="true"loop="true"/>
+    <title>新年新气象</title>
+    <link rel="icon" href="hq1.ico" type="image/x-icon"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        #container{
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            position: relative;
+        }
+        #fireworks{
+            position: absolute;
+            left: 50%;
+            margin-left: -250px;
+            bottom: 60%;
+            margin-bottom: -180px;
+            transform: scale(0);
+            animation: fireworks 5s 3s;
+        }
+
+        @keyframes fireworks {
+            0%{
+                transform: scale(0);
+            }
+            80%{
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        #firecracker{
+            position: absolute;
+            left: 50%;
+            bottom: 0%;
+            margin-left: -4px;
+            animation: firecracker 3s forwards;
+        }
+
+        @keyframes firecracker {
+            0%{
+                transform: scale(1);
+                bottom: 0%;
+            }
+            100%{
+                bottom: 60%;
+                transform: scale(0);
+            }
+        
+    }
+    </style>
+</head>
+
+<body onload="init()">
+    <div id="father">
+        <img src="cl1.jpg" width="100%" style="display: none" id="img"/></div>
+<div id="container">
+    <div id="fireworks"><img src="fireworks.png" alt=""></div>
+    <div id="firecracker"><img src="firecracker.png" alt="" width="40px"></div>
+
+</body>
+</html>
+<script>
+    function init(){
+    time = setInterval("showAd()",7000);
+}
+
+function showAd(){
+
+    var adEle = document.getElementById("img");
+
+    adEle.style.display = "block";
+
+    clearInterval(time);
+
+    time = setInterval("hiddenAd()",9000);
+}
+
+
+function hiddenAd(){
+    
+    document.getElementById("img").style.display= "none";
+    
+}
+
+</script>
